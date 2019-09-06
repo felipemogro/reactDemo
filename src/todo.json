@@ -1,0 +1,28 @@
+{
+  "todo":[
+    {
+      "title":"Tarea 1",
+      "responsable":"Bruce",
+      "description": "Lorem Ipsum",
+      "prioridad":"baja"
+    },
+    {
+      "title":"Tarea 2",
+      "responsable":"Steve",
+      "description": "Lorem Ipsum 2",
+      "prioridad":"media"
+    },
+    {
+      "title":"Tarea 3",
+      "responsable":"Natasha",
+      "description": "Lorem Ipsum 3",
+      "prioridad":"alta"
+    },
+    {
+      "title":"Tarea 4",
+      "responsable":"Tony",
+      "description": "Lorem Ipsum 4",
+      "prioridad":"alta"
+    }
+  ]
+}

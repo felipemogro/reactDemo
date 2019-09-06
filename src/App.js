@@ -1,26 +1,57 @@
-import React from 'react';
+import React,{Component} from 'react';
 import logo from './logo.svg';
 import './App.css';
+import {Navigation} from './components/Navigation';
+import {todo} from './todo.json';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+class App extends Component {
+  constructor(){
+    super();
+    this.state = {
+      todo
+    }
+  }
+
+  render(){
+  const todo=  this.state.todo.map((todo,i)=>{
+      return (
+        <div className="col-md-4">
+          <div className="card  mt-4">
+            <div className="card-header">
+              <h3>
+              {todo.title}
+              </h3>
+              <span className="badge badge-pill badge-danger ml-2">{todo.prioridad}</span>
+            </div>
+            <div className="card-body">
+              <p>
+                {todo.description}
+              </p>
+              <p>
+                <mark>{todo.responsable}</mark>
+              </p>
+              </div>
+          </div>
+        </div>
+
+      )
+    })
+    return (
+        <div className="App">
+          <Navigation titulo="menu" cantidad={todo.length} />
+          <div className="container">
+            <div className="row mt-4">
+              {todo}
+              
+            </div>
+          </div>
+          <header className="App-header">
+             <img src={logo} className="App-logo" alt="logo" />
+          </header>
+        </div>
+      );
+    }
+  }
+  
 
 export default App;

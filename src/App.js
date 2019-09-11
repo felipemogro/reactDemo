@@ -41,8 +41,7 @@ class App extends Component {
           <Navigation titulo="menu" cantidad={todo.length} />
           <div className="container">
             <div className="row mt-4">
-              {todo}
-              
+              {todo}  
             </div>
           </div>
           <header className="App-header">

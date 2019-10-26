@@ -12,6 +12,7 @@ class App extends Component {
       todo
     };
     this.handleAddTodo = this.handleAddTodo.bind(this);
+    this.handleRemove = this.handleRemove.bind(this);
 
   }
 
@@ -19,6 +20,11 @@ class App extends Component {
     this.setState({
       todo:[...this.state.todo,todo]
     })
+  }
+
+  handleRemove(index){
+    console.log(index);
+    console.log('click en remove')
   }
 
   render(){
@@ -39,6 +45,12 @@ class App extends Component {
               <p>
                 <mark>{todo.responsable}</mark>
               </p>
+              </div>
+              <div className="card-footer">
+                <button
+                className="btn btn-danger"
+                onClick={this.handleRemove}>Borrar</button>
+
               </div>
           </div>
         </div>

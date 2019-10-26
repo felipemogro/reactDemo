@@ -7,22 +7,28 @@ export class Form extends Component{
       title: '',
       responsible: '',
       description: '',
-      priority: 'low'
+      prioridad: 'low'
     };
     this.handleInput = this.handleInput.bind(this);
     this.handleForm = this.handleForm.bind(this);
   }
 
   handleInput(e){
+    
+    console.log(e.target.value,e.target.name);
     const {value,name }=e.target;
     this.setState({
       [name]:value
     })
+    console.log(this.state);
    }
+
    handleForm(e){
+    console.log(this.state);
     e.preventDefault();
     this.props.onAddTodo(this.state);
    }
+
   render(){
     return(
       <div className="card">
@@ -40,7 +46,7 @@ export class Form extends Component{
             <div className="form-group">
               <input
                 type="text"
-                name="responsible"
+                name="responsable"
                 onChange={this.handleInput}
                 className="form-control"
                 placeholder="Responsible"
@@ -57,7 +63,7 @@ export class Form extends Component{
           </div>
           <div className="form-group">
             <select
-                name="priority"
+                name="prioridad"
                 className="form-control"
                 onChange={this.handleInput}
              >

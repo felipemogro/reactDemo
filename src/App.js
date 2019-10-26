@@ -16,7 +16,7 @@ class App extends Component {
   }
 
   handleAddTodo(todo){
-    this.state({
+    this.setState({
       todo:[...this.state.todo,todo]
     })
   }

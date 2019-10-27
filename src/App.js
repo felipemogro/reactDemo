@@ -23,8 +23,13 @@ class App extends Component {
   }
 
   handleRemove(index){
-    console.log(index);
-    console.log('click en remove')
+    const items = {...this.state.todo};
+    const newItems = Object.keys(items).map(key => items[key]);
+    
+    newItems.splice(index, 1);
+    this.setState({
+      todo: newItems
+    });
   }
 
   render(){
@@ -62,12 +67,16 @@ class App extends Component {
           <Navigation titulo="menu" cantidad={todo.length} />
           <div className="container">
             <div className="row mt-4">
-            <div className="col-md-4 text-center">
-                <img src={logo} className="App-logo" alt="logo" />
-                <Form onAddTodo={this.handleAddTodo}></Form>
+                <div className="col-md-3 text-center">
+                  <img src={logo} className="App-logo" alt="logo" />
+                  <Form onAddTodo={this.handleAddTodo}></Form>
+                </div>
+                <div className="col-md-9">
+                  <div className="row">
+                    {todo}
+                  </div>
+                </div>
               </div>
-              {todo}  
-            </div>
           </div>
 
         </div>

@@ -23,7 +23,13 @@ class App extends Component {
   }
 
   handleRemove(index){
-    console.log(index);
+    const items = {...this.state.todo};
+    const newItems = Object.keys(items).map(key => items[key]);
+    
+    newItems.splice(index, 1);
+    this.setState({
+      todo: newItems
+    });
   }
 
   render(){

@@ -34,12 +34,12 @@ export class Form extends Component{
       <div className="card">
          <form className="card-body" onSubmit={this.handleForm}>
             <div className="form-group">
-              <h3>Componente Externo</h3>
+              <h4>Componente Externo</h4>
                 <input
                 type="text"
                 name="title"
                 onChange={this.handleInput}
-                className="form-control"
+                className="form-control form-control-sm"
                 placeholder="Title"
                 />
               </div>
@@ -48,7 +48,7 @@ export class Form extends Component{
                 type="text"
                 name="responsable"
                 onChange={this.handleInput}
-                className="form-control"
+                className="form-control form-control-sm"
                 placeholder="Responsible"
                 />
              </div>
@@ -57,14 +57,14 @@ export class Form extends Component{
               type="text"
               name="description"
               onChange={this.handleInput}
-              className="form-control"
+              className="form-control form-control-sm"
               placeholder="Description"
               />
           </div>
           <div className="form-group">
             <select
                 name="prioridad"
-                className="form-control"
+                className="form-control form-control-sm"
                 onChange={this.handleInput}
              >
               <option>low</option>
@@ -72,7 +72,7 @@ export class Form extends Component{
               <option>high</option>
             </select>
           </div>
-          <button type="submit" className="btn btn-primary">
+          <button type="submit" className="btn btn-primary btn-block text-uppercase">
             Save
           </button>
          </form>

@@ -24,7 +24,6 @@ class App extends Component {
 
   handleRemove(index){
     console.log(index);
-    console.log('click en remove')
   }
 
   render(){
@@ -62,12 +61,16 @@ class App extends Component {
           <Navigation titulo="menu" cantidad={todo.length} />
           <div className="container">
             <div className="row mt-4">
-            <div className="col-md-4 text-center">
-                <img src={logo} className="App-logo" alt="logo" />
-                <Form onAddTodo={this.handleAddTodo}></Form>
+                <div className="col-md-3 text-center">
+                  <img src={logo} className="App-logo" alt="logo" />
+                  <Form onAddTodo={this.handleAddTodo}></Form>
+                </div>
+                <div className="col-md-9">
+                  <div className="row">
+                    {todo}
+                  </div>
+                </div>
               </div>
-              {todo}  
-            </div>
           </div>
 
         </div>

@@ -16,20 +16,15 @@ export class Form extends Component{
   }
 
   handleInput(e){
-    
-    console.log(e.target.value,e.target.name);
     const {value,name }=e.target;
     this.setState({
       [name]:value
     })
-    console.log(this.state);
    }
 
    handleForm(e){
-    console.log(this.state);
     e.preventDefault();
     this.props.onAddTodo(this.state);
-
    }
 
   render(){

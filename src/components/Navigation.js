@@ -7,7 +7,7 @@ export class Navigation extends Component {
         <nav className="navbar navbar bg-dark">
           <a href="/" className="text-white">
             {this.props.titulo.toUpperCase()}
-            <span className="badge badge-pill badge-light ml-2">
+            <span className="badge badge-pill badge-info ml-4">
              {this.props.cantidad}
             </span>
           </a>

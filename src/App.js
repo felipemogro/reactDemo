@@ -41,7 +41,7 @@ class App extends Component {
               <h3>
               {todo.title}
               </h3>
-              <span className="badge badge-pill badge-danger ml-2">{todo.prioridad}</span>
+              <span className="badge badge-pill badge-warning ml-2">{todo.prioridad.toUpperCase()}</span>
             </div>
             <div className="card-body">
               <p>

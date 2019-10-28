@@ -48,7 +48,9 @@ class App extends Component {
                 {todo.description}
               </p>
               <p>
+               <strong>
                 <mark>{todo.responsable}</mark>
+              </strong> 
               </p>
               </div>
               <div className="card-footer">

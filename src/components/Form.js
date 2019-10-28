@@ -7,7 +7,7 @@ export class Form extends Component{
       title: '',
       responsible: '',
       description: '',
-      prioridad: 'low'
+      prioridad: 'baja'
     };
     this.handleInput = this.handleInput.bind(this);
     this.handleForm = this.handleForm.bind(this);
@@ -34,13 +34,13 @@ export class Form extends Component{
       <div className="card">
          <form className="card-body" onSubmit={this.handleForm}>
             <div className="form-group">
-              <h4>Componente Externo</h4>
+              <h4>Agregar Datos</h4>
                 <input
                 type="text"
                 name="title"
                 onChange={this.handleInput}
                 className="form-control form-control-sm"
-                placeholder="Title"
+                placeholder="Título"
                 />
               </div>
             <div className="form-group">
@@ -49,7 +49,7 @@ export class Form extends Component{
                 name="responsable"
                 onChange={this.handleInput}
                 className="form-control form-control-sm"
-                placeholder="Responsible"
+                placeholder="Responsable"
                 />
              </div>
           <div className="form-group">
@@ -58,7 +58,7 @@ export class Form extends Component{
               name="description"
               onChange={this.handleInput}
               className="form-control form-control-sm"
-              placeholder="Description"
+              placeholder="Descripcion"
               />
           </div>
           <div className="form-group">
@@ -67,13 +67,13 @@ export class Form extends Component{
                 className="form-control form-control-sm"
                 onChange={this.handleInput}
              >
-              <option>low</option>
-              <option>medium</option>
-              <option>high</option>
+              <option>baja</option>
+              <option>media</option>
+              <option>alta</option>
             </select>
           </div>
           <button type="submit" className="btn btn-primary btn-block text-uppercase">
-            Save
+            Guardar
           </button>
          </form>
       </div>

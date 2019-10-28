@@ -1,4 +1,6 @@
 import React,{Component} from 'react';
+import SweetAlert from 'sweetalert2-react';
+
 
 export class Form extends Component{
   constructor () {
@@ -14,17 +16,13 @@ export class Form extends Component{
   }
 
   handleInput(e){
-    
-    console.log(e.target.value,e.target.name);
     const {value,name }=e.target;
     this.setState({
       [name]:value
     })
-    console.log(this.state);
    }
 
    handleForm(e){
-    console.log(this.state);
     e.preventDefault();
     this.props.onAddTodo(this.state);
    }
@@ -72,8 +70,14 @@ export class Form extends Component{
               <option>alta</option>
             </select>
           </div>
-          <button type="submit" className="btn btn-primary btn-block text-uppercase">
+          <button onClick={() => this.setState({ show: true })} type="submit" className="btn btn-primary btn-block text-uppercase">
             Guardar
+            <SweetAlert
+              show={this.state.show}
+              title="Guardado!"
+              text="Agregado con éxito"
+              onConfirm={() => this.setState({ show: false })}
+            />
           </button>
          </form>
       </div>

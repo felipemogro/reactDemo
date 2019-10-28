@@ -25,6 +25,7 @@ export class Form extends Component{
    handleForm(e){
     e.preventDefault();
     this.props.onAddTodo(this.state);
+    this.setState({ show: true })
    }
 
   render(){
@@ -35,6 +36,7 @@ export class Form extends Component{
               <h4>Agregar Datos</h4>
                 <input
                 type="text"
+                required
                 name="title"
                 onChange={this.handleInput}
                 className="form-control form-control-sm"
@@ -44,6 +46,7 @@ export class Form extends Component{
             <div className="form-group">
               <input
                 type="text"
+                required
                 name="responsable"
                 onChange={this.handleInput}
                 className="form-control form-control-sm"
@@ -53,6 +56,7 @@ export class Form extends Component{
           <div className="form-group">
             <input
               type="text"
+              required
               name="description"
               onChange={this.handleInput}
               className="form-control form-control-sm"
@@ -62,6 +66,7 @@ export class Form extends Component{
           <div className="form-group">
             <select
                 name="prioridad"
+                required
                 className="form-control form-control-sm"
                 onChange={this.handleInput}
              >
@@ -70,14 +75,10 @@ export class Form extends Component{
               <option>alta</option>
             </select>
           </div>
-          <button onClick={() => this.setState({ show: true })} type="submit" className="btn btn-primary btn-block text-uppercase">
+          <button type="submit" className="btn btn-primary btn-block text-uppercase">
             Guardar
             <SweetAlert
-              show={this.state.show}
-              title="Guardado!"
-              text="Agregado con éxito"
-              onConfirm={() => this.setState({ show: false })}
-            />
+            show={this.state.show}   title="Guardado!"   text="Exito"   onConfirm={() => this.setState({ show: false })} />
           </button>
          </form>
       </div>

@@ -3,6 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 import {Navigation} from './components/Navigation';
 import Form from './components/Form';
+import Footer from './components/Footer';
 
 class App extends Component {
   constructor(){
@@ -32,13 +33,14 @@ class App extends Component {
   }
 
   handleRemove(index){
-    const items = {...this.state.datos};
-    const newItems = Object.keys(items).map(key => items[key]);
+    console.log(index);
+    // const items = {...this.state.datos};
+    // const newItems = Object.keys(items).map(key => items[key]);
 
-    newItems.splice(index, 1);
-    this.setState({
-      todo: newItems
-    });
+    // newItems.splice(index, 1);
+    // this.setState({
+    //   todo: newItems
+    // });
   }
 
   render(){
@@ -51,7 +53,7 @@ class App extends Component {
               <h3>
               {todo.title}
               </h3>
-              <span className="badge badge-pill badge-warning ml-2">{todo.prioridad.toUpperCase()}</span>
+              <span className="badge badge-pill badge-warning ml-2 text-uppercase">{todo.prioridad.toUpperCase()}</span>
             </div>
             <div className="card-body">
               <p>
@@ -65,7 +67,7 @@ class App extends Component {
               </div>
               <div className="card-footer">
                 <button
-                className="btn btn-danger"
+                className="btn btn-danger text-uppercase"
                 onClick={this.handleRemove}>Borrar</button>
 
               </div>
@@ -89,6 +91,7 @@ class App extends Component {
                   </div>
                 </div>
               </div>
+              <Footer></Footer>
           </div>
 
         </div>

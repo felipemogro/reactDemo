@@ -78,7 +78,7 @@ export class Form extends Component{
           <button type="submit" className="btn btn-primary btn-block text-uppercase">
             Guardar
             <SweetAlert
-            show={this.state.show}   title="Guardado!"   text="Exito"   onConfirm={() => this.setState({ show: false })} />
+            show={this.state.show}   title="Guardado!"   text="Tarea guardad con éxito"   onConfirm={() => this.setState({ show: false })} />
           </button>
          </form>
       </div>

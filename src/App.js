@@ -2,30 +2,40 @@ import React,{Component} from 'react';
 import logo from './logo.svg';
 import './App.css';
 import {Navigation} from './components/Navigation';
-import {todo} from './todo.json';
 import Form from './components/Form';
 
 class App extends Component {
   constructor(){
     super();
     this.state = {
-      todo
+      datos:[]
     };
     this.handleAddTodo = this.handleAddTodo.bind(this);
     this.handleRemove = this.handleRemove.bind(this);
 
   }
 
-  handleAddTodo(todo){
+  componentDidMount() {
+    fetch('https://api.myjson.com/bins/1dqbsk')
+    .then(res => res.json())
+    .then((data) => {
+      this.setState({ datos: data })
+      console.log(this.state.datos)
+    })
+    .catch(console.log)
+  }
+
+
+  handleAddTodo(datos){
     this.setState({
-      todo:[...this.state.todo,todo]
+      datos:[...this.state.datos,datos]
     })
   }
 
   handleRemove(index){
-    const items = {...this.state.todo};
+    const items = {...this.state.datos};
     const newItems = Object.keys(items).map(key => items[key]);
-    
+
     newItems.splice(index, 1);
     this.setState({
       todo: newItems
@@ -33,7 +43,8 @@ class App extends Component {
   }
 
   render(){
-  const todo=  this.state.todo.map((todo,i)=>{
+    
+  const todo=  this.state.datos.map((todo)=>{
       return (
         <div className="col-md-4">
           <div className="card  mt-4">

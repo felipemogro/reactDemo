@@ -3,6 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 import {Navigation} from './components/Navigation';
 import Form from './components/Form';
+import Footer from './components/Footer';
 
 class App extends Component {
   constructor(){
@@ -90,6 +91,7 @@ class App extends Component {
                   </div>
                 </div>
               </div>
+              <Footer></Footer>
           </div>
 
         </div>

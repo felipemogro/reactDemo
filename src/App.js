@@ -45,7 +45,7 @@ class App extends Component {
 
   render(){
     
-  const todo=  this.state.datos.map((todo)=>{
+  const todo =  this.state.datos.map((todo)=>{
       return (
         <div className="col-md-4">
           <div className="card  mt-4">
@@ -69,7 +69,6 @@ class App extends Component {
                 <button
                 className="btn btn-danger text-uppercase"
                 onClick={this.handleRemove}>Borrar</button>
-
               </div>
           </div>
         </div>
@@ -78,30 +77,22 @@ class App extends Component {
     })
     return (
         <div className="App">
-          <Navigation titulo="menu" cantidad={todo.length} />
-          <div className="container">
-            <div className="row mt-4">
-                <div className="col-md-3 text-center">
-                  <img src={logo} className="App-logo" alt="logo" />
-                  <Form onAddTodo={this.handleAddTodo}></Form>
-                </div>
-                <div className="col-md-9">
-                  <div className="row">
-                    {todo}
+            <Navigation titulo="menu" cantidad={todo.length} />
+            <div className="container">
+              <div className="row mt-4">
+                  <div className="col-md-3 text-center">
+                    <img src={logo} className="App-logo" alt="logo" />
+                    <Form onAddTodo={this.handleAddTodo}></Form>
                   </div>
-                </div>
+                  <div className="col-md-9">
+                    <div className="row">
+                      {todo}
+                    </div>
+                  </div>
               </div>
-          </div>
-          <div>
+            </div>
+            <Footer></Footer>
         </div>
-        <div>
-
-<Footer></Footer>
-</div>
-        </div>
-
-
-       
       );
     }
   }

@@ -25,13 +25,14 @@ export class Form extends Component{
    handleForm(e){
     e.preventDefault();
     this.props.onAddTodo(this.state);
+    document.getElementById("addTarget").reset();
     this.setState({ show: true })
    }
 
   render(){
     return(
       <div className="card">
-         <form className="card-body" onSubmit={this.handleForm}>
+         <form id="addTarget" className="card-body" onSubmit={this.handleForm}>
             <div className="form-group">
               <h4>Agregar Datos</h4>
                 <input

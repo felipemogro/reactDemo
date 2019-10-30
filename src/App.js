@@ -34,13 +34,16 @@ class App extends Component {
   }
 
   handleRemove(index){
-    this.setState({ show: true })
-    const items = {...this.state.datos};
-    const newItems = Object.keys(items).map(key => items[key]);
-    newItems.splice(index, 1);
-    this.setState({
-      datos: newItems
-    });
+    var opcion = window.confirm("Esta seguro de eliminar la tarjeta?");
+    if (opcion) {
+      this.setState({ show: true })
+      const items = {...this.state.datos};
+      const newItems = Object.keys(items).map(key => items[key]);
+      newItems.splice(index, 1);
+      this.setState({
+        datos: newItems
+      });
+    }
   }
 
   render(){

@@ -4,6 +4,7 @@ import './App.css';
 import {Navigation} from './components/Navigation';
 import Form from './components/Form';
 import Footer from './components/Footer';
+import SweetAlert from 'sweetalert2-react';
 
 class App extends Component {
   constructor(){
@@ -12,7 +13,7 @@ class App extends Component {
       datos:[]
     };
     this.handleAddTodo = this.handleAddTodo.bind(this);
-    this.handleRemove = this.handleRemove.bind(this);
+    //this.handleRemove = this.handleRemove.bind(this);
 
   }
 
@@ -33,19 +34,18 @@ class App extends Component {
   }
 
   handleRemove(index){
-    console.log(index);
-    // const items = {...this.state.datos};
-    // const newItems = Object.keys(items).map(key => items[key]);
-
-    // newItems.splice(index, 1);
-    // this.setState({
-    //   todo: newItems
-    // });
+    this.setState({ show: true })
+    const items = {...this.state.datos};
+    const newItems = Object.keys(items).map(key => items[key]);
+    newItems.splice(index, 1);
+    this.setState({
+      datos: newItems
+    });
   }
 
   render(){
     
-  const todo =  this.state.datos.map((todo)=>{
+  const todo =  this.state.datos.map((todo, i)=>{
       return (
         <div className="col-md-4">
           <div className="card  mt-4">
@@ -68,7 +68,9 @@ class App extends Component {
               <div className="card-footer">
                 <button
                 className="btn btn-danger text-uppercase"
-                onClick={this.handleRemove}>Borrar</button>
+                onClick={this.handleRemove.bind(this, i)}>Borrar</button>
+                  <SweetAlert
+            show={this.state.show}   title="Eliminado!"   text="Tarea eliminada con éxito"   onConfirm={() => this.setState({ show: false })} />
               </div>
           </div>
         </div>

@@ -1,8 +1,9 @@
 This project is a demo, from  https://www.youtube.com/watch?v=zIY87vU33aA
 
-Now we are trying to add new features for education propouses
+First Only read a localjson 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+After, read a Json stored on a website, simuling a Api Rest
+
 
 ## Available Scripts
 
@@ -12,9 +13,6 @@ In the project directory, you can run:
 
 Runs the app in the development mode.<br>
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
 
 ### `npm test`
 

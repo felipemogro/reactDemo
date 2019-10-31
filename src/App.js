@@ -5,6 +5,10 @@ import { Navigation } from "./components/Navigation";
 import Form from "./components/Form";
 import Footer from "./components/Footer";
 import SweetAlert from "sweetalert2-react";
+import Swal from "sweetalert2";
+import withReactContent from "sweetalert2-react-content";
+
+const MySwal = withReactContent(Swal);
 
 class App extends Component {
   constructor() {
@@ -31,16 +35,36 @@ class App extends Component {
   }
 
   handleRemove(index) {
-    var opcion = window.confirm("Esta seguro de eliminar la tarjeta?");
-    if (opcion) {
-      this.setState({ show: true });
-      const items = { ...this.state.datos };
-      const newItems = Object.keys(items).map(key => items[key]);
-      newItems.splice(index, 1);
-      this.setState({
-        datos: newItems
-      });
-    }
+    MySwal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      type: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!"
+    }).then(result => {
+      if (result.value) {
+        Swal.fire("Deleted!", "Your file has been deleted.", "success");
+        this.setState({ show: true });
+        const items = { ...this.state.datos };
+        const newItems = Object.keys(items).map(key => items[key]);
+        newItems.splice(index, 1);
+        this.setState({
+          datos: newItems
+        });
+      }
+    });
+    // var opcion = window.confirm("Esta seguro de eliminar la tarjeta?");
+    // if (opcion) {
+    //   this.setState({ show: true });
+    //   const items = { ...this.state.datos };
+    //   const newItems = Object.keys(items).map(key => items[key]);
+    //   newItems.splice(index, 1);
+    //   this.setState({
+    //     datos: newItems
+    //   });
+    // }
   }
 
   render() {

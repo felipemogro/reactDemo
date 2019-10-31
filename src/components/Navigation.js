@@ -1,14 +1,14 @@
-import React,{Component} from 'react';
+import React, { Component } from "react";
 
 export class Navigation extends Component {
-  render(){
+  render() {
     return (
       <div className="Nav">
         <nav className="navbar navbar bg-dark">
           <a href="/" className="text-white">
             {this.props.titulo.toUpperCase()}
             <span className="badge badge-pill badge-info ml-4">
-             {this.props.cantidad}
+              {this.props.cantidad}
             </span>
           </a>
         </nav>

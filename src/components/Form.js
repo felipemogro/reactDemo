@@ -70,16 +70,16 @@ export class Form extends Component {
               className="form-control form-control-sm"
               onChange={this.handleInput}
             >
-              <option>baja</option>
-              <option>media</option>
-              <option>alta</option>
+              <option className="text-uppercase">baja</option>
+              <option className="text-uppercase">media</option>
+              <option className="text-uppercase">alta</option>
             </select>
           </div>
           <button
             type="submit"
             className="btn btn-primary btn-block text-uppercase"
           >
-            Guardar
+            Save
             <SweetAlert
               show={this.state.show}
               title="Guardado!"
